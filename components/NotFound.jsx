@@ -1,10 +1,11 @@
-import { getTranslations } from "next-intl/server";
+"use client";
 import Link from "next/link";
 
-export default async function NotFoundPage(params) {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "NotFound" });
-  //   const t = await getTranslations({ locale, namespace: "NotFoundPage" });
+import { useLocale, useTranslations } from "next-intl";
+
+export default function NotFoundPage() {
+  const locale = useLocale();
+  const t = useTranslations("NotFound");
 
   return (
     <div className="flex flex-col items-center py-12 container mx-auto h-full gap-4 max-w-[500px]">

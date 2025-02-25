@@ -16,26 +16,29 @@ import {
 
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const info = [
   {
     icon: <FaPhoneAlt />,
-    title: "Phone",
-    description: "(+40) 321 654 876",
+    title: "phone",
+    description: "(+39) 389 2958220",
   },
   {
     icon: <FaEnvelope />,
-    title: "Email",
+    title: "email",
     description: "fabrizio.reguzzi@gmail.com",
   },
   {
     icon: <FaMapMarkerAlt />,
-    title: "Address",
+    title: "address",
     description: "Bergamo, Italy",
   },
 ];
 
 const Contact = () => {
+  const t = useTranslations("Contact");
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -51,39 +54,50 @@ const Contact = () => {
               action=""
               className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
             >
-              <h3 className="text-4xl text-accent">Let's work together</h3>
-              <p className="text-white/60">
-                Feel free to reach out to me for any project or collaboration.
-                I'm always open to discussing new ideas and opportunities.
-              </p>
+              <h3 className="text-4xl text-accent">{t("title")}</h3>
+              <p className="text-white/60">{t("description")}</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="First name" />
-                <Input type="lastname" placeholder="Last name" />
-                <Input type="email" placeholder="Email address" />
-                <Input type="phone" placeholder="Phone number" />
+                <Input
+                  type="firstname"
+                  placeholder={`${t("form.firstname")}`}
+                />
+                <Input type="lastname" placeholder={`${t("form.lastname")}`} />
+                <Input type="email" placeholder={`${t("form.email")}`} />
+                <Input type="phone" placeholder={`${t("form.phone")}`} />
               </div>
               <Select>
                 <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select a service">
-                    Select a subject
-                  </SelectValue>
+                  <SelectValue
+                    placeholder={`${t("form.services.label")}`}
+                  ></SelectValue>
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
-                    <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="est">Web development</SelectItem>
-                    <SelectItem value="cst">UI/UX design</SelectItem>
-                    <SelectItem value="mst">Logo Design</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
+                    <SelectLabel>{t("form.services.label")}</SelectLabel>
+                    <SelectItem value="web">
+                      {t("form.services.web")}
+                    </SelectItem>
+                    <SelectItem value="telegram">
+                      {t("form.services.telegram")}
+                    </SelectItem>
+                    <SelectItem value="webdev">
+                      {t("form.services.webdev")}
+                    </SelectItem>
+                    <SelectItem value="API">
+                      {t("form.services.api")}
+                    </SelectItem>
+                    <SelectItem value="other">
+                      {t("form.services.other")}
+                    </SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
               <Textarea
-                placeholder="Type your message here."
+                placeholder={`${t("form.message")}`}
                 className="h-[200px]"
               />
               <Button size="md" className="max-w-40">
-                Send message
+                {t("form.submit")}
               </Button>
             </form>
           </div>
@@ -95,7 +109,7 @@ const Contact = () => {
                     <div className="text-[28px]">{item.icon}</div>
                   </div>
                   <div className="flex-1">
-                    <h4 className=" text-white/60">{item.title}</h4>
+                    <h4 className=" text-white/60">{t(`info.${item.title}`)}</h4>
                     <p className="text-xl">{item.description}</p>
                   </div>
                 </li>

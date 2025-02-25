@@ -30,7 +30,7 @@ export default function LocaleSwitcher() {
   return (
     <LocaleSwitcherSelect defaultValue={locale} label={t("label")}>
       {routing.locales.map((cur) => (
-        <option key={cur} value={cur}>
+        <option key={cur} value={cur} className="bg-primary appearance-none hover:text-gray-700 hover:bg-white hover:border-blue-600 hover:outline-none">
           {isXL ? t("localeXL", { locale: cur }) : t("locale", { locale: cur })}
         </option>
       ))}

@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiDownload } from "react-icons/fi";
 import { pdfjs, Document, Page } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 import { motion } from "framer-motion";
+import { useLocale } from "next-intl";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.mjs",
@@ -13,10 +14,19 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 ).toString();
 
 export default function Sample() {
+  const locale = useLocale();
   const [file, setFile] = useState("/cv.pdf");
   const [numPages, setNumPages] = useState();
 
   const [pageNumber, setPageNumber] = useState(1);
+
+  useEffect(() => {
+    if (locale === "it") {
+      setFile("/cv.pdf");
+    } else {
+      setFile("/cv-en.pdf");
+    }
+  }, [locale]);
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
