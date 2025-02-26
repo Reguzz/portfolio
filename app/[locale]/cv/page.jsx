@@ -56,9 +56,14 @@ export default function Sample() {
       <Document
         file={file}
         onLoadSuccess={onDocumentLoadSuccess}
-        className="w-full flex justify-center items-center relative"
+        className="flex justify-center items-center relative"
       >
-        <Page pageNumber={pageNumber} />
+        <Page
+          pageNumber={pageNumber}
+          className={"sm:hidden"}
+          width={window.innerWidth}
+        />
+        <Page pageNumber={pageNumber} className={"hidden sm:block"} />
       </Document>
       <div className="fixed bottom-3 left-[50%] rounded-md text-primary translate-x-[-50%] shadow-[0_30px_40px_0_rgba(16,36,94,0.2)] bg-white z-40 transition-opacity duration-[ease-in-out] delay-[0.2s]">
         <button

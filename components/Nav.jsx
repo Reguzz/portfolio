@@ -7,7 +7,7 @@ import { useLocale, useTranslations } from "next-intl";
 const links = [
   {
     name: "home",
-    path: "/",
+    path: "",
   },
   {
     name: "services",
