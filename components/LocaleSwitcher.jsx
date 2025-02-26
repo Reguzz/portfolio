@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { routing } from "@/i18n/routing";
 import LocaleSwitcherSelect from "./LocaleSwitcherSelect";
 import { useEffect, useState } from "react";
+import { SelectItem } from "@/components/ui/select";
 
 export default function LocaleSwitcher() {
   const t = useTranslations("LocaleSwitcher");
@@ -28,11 +29,18 @@ export default function LocaleSwitcher() {
   }, []);
 
   return (
-    <LocaleSwitcherSelect defaultValue={locale} label={t("label")}>
+    <LocaleSwitcherSelect
+      defaultValue={locale}
+      label={t(`label${isXL ? "XL" : ""}`)}
+    >
       {routing.locales.map((cur) => (
-        <option key={cur} value={cur} className="bg-primary appearance-none hover:text-gray-700 hover:bg-white hover:border-blue-600 hover:outline-none">
+        <SelectItem
+          key={cur}
+          value={cur}
+          className="bg-primary appearance-none hover:text-gray-700 hover:bg-white hover:border-blue-600 hover:outline-none"
+        >
           {isXL ? t("localeXL", { locale: cur }) : t("locale", { locale: cur })}
-        </option>
+        </SelectItem>
       ))}
     </LocaleSwitcherSelect>
   );

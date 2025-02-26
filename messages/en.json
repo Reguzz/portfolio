@@ -27,7 +27,8 @@
   "LocaleSwitcher": {
     "locale": "{locale, select, it {🇮🇹} en {🇬🇧} other {Unknown}}",
     "localeXL": "{locale, select, it {🇮🇹 Italiano} en {🇬🇧 English} other {Unknown}}",
-    "label": "Change language"
+    "label": "🌐",
+    "labelXL": "Change language"
   },
   "Services": {
     "1": "Website development services, from simple landing pages to complex e-commerce platforms. Services include development, deployment, maintenance.",
@@ -38,6 +39,12 @@
   "Resume": {
     "title": "About me",
     "description": "I am a full-stack developer with a passion for crafting digital experiences. I have experience in various programming languages and technologies, and I am always eager to learn new things.",
+    "list": {
+      "experience": "Experience",
+      "education": "Education",
+      "skills": "Skills",
+      "aboutme": "About Me"
+    },
     "info": [
       {
         "title": "Name",

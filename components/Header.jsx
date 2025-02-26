@@ -29,7 +29,7 @@ const Header = () => {
             <Button>Contact me</Button>
           </Link>
         </div>
-        <div className="flex items-center ">
+        <div className="flex items-center gap-2 ">
           <LocaleSwitcher />
           {/* mobile nav */}
           <div className="xl:hidden">

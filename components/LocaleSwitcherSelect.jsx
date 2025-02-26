@@ -1,9 +1,17 @@
 "use client";
 
-import clsx from "clsx";
+import { useState } from "react";
 import { useParams } from "next/navigation";
-import { ChangeEvent, ReactNode, useTransition } from "react";
-import { Locale, usePathname, useRouter } from "@/i18n/routing";
+import { useTransition } from "react";
+import { usePathname, useRouter } from "@/i18n/routing";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export default function LocaleSwitcherSelect({
   children,
@@ -14,37 +22,38 @@ export default function LocaleSwitcherSelect({
   const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
   const params = useParams();
+  const [selectedOption, setSelectedOption] = useState(defaultValue);
 
-  function onSelectChange(event) {
-    const nextLocale = event.target.value;
+  function onSelectChange(value) {
     startTransition(() => {
       router.replace(
         // @ts-expect-error -- TypeScript will validate that only known `params`
         // are used in combination with a given `pathname`. Since the two will
         // always match for the current route, we can skip runtime checks.
         { pathname, params },
-        { locale: nextLocale }
+        { locale: value }
       );
     });
   }
 
   return (
-    <label
-      className={clsx(
-        "relative text-white/60 bg-primary mr-2 xl:mr-0",
-        isPending && "transition-opacity [&:disabled]:opacity-30 "
-      )}
+    <Select
+      value={selectedOption}
+      onValueChange={(value) => {
+        setSelectedOption(value);
+        onSelectChange(value);
+      }}
+      disabled={isPending}
     >
-      <p className="sr-only">{label}</p>
-      <select
-        className="inline-flex appearance-none bg-transparent py-3 pl-2 pr-6 outline-none hover:ring-accent hover:ring-2 rounded-md "
-        defaultValue={defaultValue}
-        disabled={isPending}
-        onChange={onSelectChange}
-      >
-        {children}
-      </select>
-      <span className="pointer-events-none absolute right-2 top-[8px]">⌄</span>
-    </label>
+      <SelectTrigger className="w-full">
+        <SelectValue />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectLabel>{label}</SelectLabel>
+          {children}
+        </SelectGroup>
+      </SelectContent>
+    </Select>
   );
 }
