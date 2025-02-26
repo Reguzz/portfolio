@@ -61,7 +61,7 @@
         "value": "English, Italian"
       }
     ],
-    "experiences": {
+    "experience": {
       "icon": "/assets/resume/badge.svg",
       "title": "My Experience",
       "description": "desc",
@@ -72,14 +72,14 @@
           "period": "2021 - Present"
         },
         {
-          "company": "Gualini Lamiere International S.p.A.",
-          "position": "IT Specialist Intern",
-          "period": "2020 - 2021"
-        },
-        {
           "company": "Studio Montanelli",
           "position": "Freelance Full-stack Developer",
           "period": "Summer 2020"
+        },
+        {
+          "company": "Gualini Lamiere International S.p.A.",
+          "position": "IT Specialist Stagista",
+          "period": "2020 - 2021"
         }
       ]
     }

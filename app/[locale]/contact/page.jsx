@@ -19,11 +19,11 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 const info = [
-  {
-    icon: <FaPhoneAlt />,
-    title: "phone",
-    description: "(+39) 389 2958220",
-  },
+  // {
+  //   icon: <FaPhoneAlt />,
+  //   title: "phone",
+  //   description: "(+39) 389 2958220",
+  // },
   {
     icon: <FaEnvelope />,
     title: "email",

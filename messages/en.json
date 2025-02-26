@@ -51,10 +51,6 @@
         "value": "Fabrizio Reguzzi"
       },
       {
-        "title": "Phone",
-        "value": "(+39) 389 2958220"
-      },
-      {
         "title": "Experience",
         "value": "4+ Years"
       },
@@ -67,7 +63,7 @@
         "value": "English, Italian"
       }
     ],
-    "experiences": {
+    "experience": {
       "icon": "/assets/resume/badge.svg",
       "title": "My Experience",
       "description": "desc",
@@ -78,14 +74,83 @@
           "period": "2021 - Present"
         },
         {
-          "company": "Gualini Lamiere International S.p.A.",
-          "position": "IT Specialist Intern",
-          "period": "2020 - 2021"
-        },
-        {
           "company": "Studio Montanelli",
           "position": "Freelance Full-stack Developer",
           "period": "Summer 2020"
+        },
+        {
+          "company": "Gualini Lamiere International S.p.A.",
+          "position": "IT Specialist Intern",
+          "period": "2020 - 2021"
+        }
+      ]
+    },
+    "education": {
+      "title": "My Education",
+      "description": "education",
+      "items": [
+        {
+          "company": "AIO Blockchain Lab SRL",
+          "position": "Blockchain and Digital assets",
+          "period": "set 2022 - mar 2023"
+        },
+        {
+          "company": "Università degli Studi di Milano-Bicocca",
+          "position": "Bachelor of Science - BS, Computer Science",
+          "period": "ott 2018 - mar 2022"
+        },
+        {
+          "company": "Istituto Tecnico Commerciale B.Belotti",
+          "position": "Diploma Istituto Tecnico , sistemi informativi aziendali",
+          "period": "2013 - 2018"
+        }
+      ]
+    },
+    "skills": {
+      "title": "My Skills",
+      "description": "skills description",
+      "items": [
+        {
+          "icon": "html",
+          "name": "Html5"
+        },
+        {
+          "icon": "css",
+          "name": "Css3"
+        },
+        {
+          "icon": "tailwind",
+          "name": "TailwindCss"
+        },
+        {
+          "icon": "js",
+          "name": "JavaScript"
+        },
+        {
+          "icon": "node",
+          "name": "Node.js"
+        },
+        {
+          "icon": "react",
+          "name": "React"
+        },
+        {
+          "icon": "next",
+          "name": "Next.js"
+        }
+      ]
+    },
+    "aboutme": {
+      "title": "About Me",
+      "description": "about me description",
+      "info": [
+        {
+          "title": "Name",
+          "value": "Fabrizio Reguzzi"
+        },
+        {
+          "title": "Experience",
+          "value": "4+ Years"
         }
       ]
     }
