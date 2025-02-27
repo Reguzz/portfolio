@@ -3,8 +3,8 @@ import { useTranslations } from "next-intl";
 import CountUp from "react-countup";
 
 const stats = [
-  { num: 5, text: "years" },
-  { num: 7, text: "projects" },
+  { num: 4, text: "years" },
+  { num: 5, text: "projects" },
   { num: 8, text: "technologies" },
   { num: 500, text: "commits" },
 ];

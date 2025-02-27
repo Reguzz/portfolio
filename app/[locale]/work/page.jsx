@@ -1,7 +1,7 @@
 "use client";
 
 import { easeIn, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -17,50 +17,74 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 
 import Link from "next/link";
 import Image from "next/image";
+import { useMessages } from "next-intl";
 
-const projects = [
-  {
-    num: "01",
-    category: "frontend",
-    title: "Project 1",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "JavaScript" }],
-    image: "/assets/work/thumb1.png",
-    live: "",
-    github: "",
-  },
-  {
-    num: "02",
-    category: "Full-Stack",
-    title: "Project 2",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
-    image: "/assets/work/thumb2.png",
-    live: "",
-    github: "",
-  },
-  {
-    num: "03",
-    category: "Frointend",
-    title: "Project 3",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }],
-    image: "/assets/work/thumb3.png",
-    live: "",
-    github: "",
-  },
-];
+// whatsapp bot
+// facial recognition system
+// mes
+// portfolio
+// telegram min app
+
+// const projects = [
+//   {
+//     num: "01",
+//     category: "frontend",
+//     title: "Project 1",
+//     description:
+//       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec.",
+//     stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "JavaScript" }],
+//     image: "/assets/work/thumb1.png",
+//     live: "",
+//     github: "",
+//   },
+//   {
+//     num: "02",
+//     category: "Full-Stack",
+//     title: "Project 2",
+//     description:
+//       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec.",
+//     stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
+//     image: "/assets/work/thumb2.png",
+//     live: "",
+//     github: "",
+//   },
+//   {
+//     num: "03",
+//     category: "Frointend",
+//     title: "Project 3",
+//     description:
+//       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec.",
+//     stack: [{ name: "Next.js" }, { name: "Tailwind.css" }],
+//     image: "/assets/work/thumb3.png",
+//     live: "",
+//     github: "",
+//   },
+// ];
 
 const Work = () => {
-  const [project, setProject] = useState(projects[0]);
+  const [project, setProject] = useState();
+  const [index, setIndex] = useState(0);
+
+  const messages = useMessages();
+
+  const projects = messages.Work.projects;
+  const skills = messages.Resume.skills.items;
+
+  useEffect(() => {
+    if (projects.length > 0) setProject(projects[0]);
+    console.log(projects.length > 0);
+    console.log(projects);
+  }, []);
 
   const handleSlideChange = (swiper) => {
     const currentIndex = swiper.activeIndex;
+    setIndex(currentIndex);
     setProject(projects[currentIndex]);
   };
+
+  if (!project) return null;
+
+  // return(<button onClick={handleClick}>Click</button>)
 
   return (
     <motion.section
@@ -73,48 +97,55 @@ const Work = () => {
     >
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
-          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
+          <div className="w-full xl:w-[50%] xl:max-w-[50%] xl:flex-wrap xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-[30px] h-[50%]">
               <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
-                {project.num}
+                {String(index + 1).padStart(2, "0")}
               </div>
-              <h2 className="font-bold text-[42px] leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category} project
-              </h2>
+              <div className="flex flex-col gap-2">
+                <h2 className="font-bold text-[42px] leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
+                  {project.title}
+                </h2>
+                <p className="text-white/60">{project.category}</p>
+              </div>
               <p className="text-white/60">{project.description}</p>
-              <ul className="flex gap-4">
+              <ul className="flex flex-wrap gap-x-4 gap-y-2 ">
                 {project.stack.map((item, index) => (
                   <li key={index} className="text-xl text-accent">
-                    {item.name}
+                    {skills.filter((skill) => skill.icon === item)[0].name}
                     {index !== project.stack.length - 1 && ","}
                   </li>
                 ))}
               </ul>
               <div className="flex items-center gap-4">
-                <Link href={project.live}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Live project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-                <Link href={project.github}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsGithub className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Github repository</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+                {project.live && (
+                  <Link href={project.live || ""} target="_blank" >
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                          <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Live project</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                )}
+                {project.github && (
+                  <Link href={project.github || ""} target="_blank">
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                          <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Github repository</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                )}
               </div>
             </div>
           </div>
@@ -134,7 +165,7 @@ const Work = () => {
                         src={project.image}
                         alt=""
                         fill
-                        className="object-cover"
+                        className="object-contain"
                       />
                     </div>
                   </div>

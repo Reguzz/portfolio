@@ -1,7 +1,29 @@
 "use client";
 
-import { FaHtml5, FaCss3, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import {
+  FaHtml5,
+  FaCss3,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaTelegram,
+  FaGit,
+  FaDocker,
+  FaWhatsapp,
+} from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiNextdotjs,
+  SiTableau,
+  SiQlik,
+  SiNginx,
+  SiMysql,
+  SiTypescript,
+  SiMongodb,
+  SiExpress,
+  SiFlask,
+  SiVite,
+} from "react-icons/si";
 import { motion } from "framer-motion";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import {
@@ -17,11 +39,24 @@ import { useTranslations, useMessages } from "next-intl";
 const icons = {
   html: <FaHtml5 />,
   css: <FaCss3 />,
-  js: <FaJs />,
-  react: <FaReact />,
-  node: <FaNodeJs />,
   tailwind: <SiTailwindcss />,
+  js: <FaJs />,
+  node: <FaNodeJs />,
+  react: <FaReact />,
+  typescript: <SiTypescript />,
+  vite: <SiVite />,
   next: <SiNextdotjs />,
+  express: <SiExpress />,
+  flask: <SiFlask />,
+  mongodb: <SiMongodb />,
+  mysql: <SiMysql />,
+  docker: <FaDocker />,
+  nginx: <SiNginx />,
+  git: <FaGit />,
+  qlik: <SiQlik />,
+  tableau: <SiTableau />,
+  telegram: <FaTelegram />,
+  whatsapp: <FaWhatsapp />,
 };
 
 const Resume = () => {
@@ -153,7 +188,9 @@ const Resume = () => {
                     >
                       <span className="text-white/60">{item.title}</span>
                       {item.title === "Email" ? (
-                        <span className="text-xl" href={`mailto:${item.value}`}>{item.value}</span>
+                        <span className="text-xl" href={`mailto:${item.value}`}>
+                          {item.value}
+                        </span>
                       ) : (
                         <span className="text-xl">{item.value}</span>
                       )}

@@ -33,12 +33,11 @@
   "Services": {
     "1": "Website development services, from simple landing pages to complex e-commerce platforms. Services include development, deployment, maintenance.",
     "2": "Engaging Telegram mini apps and bots developed to automate tasks and enhance user interaction. Specialized Telegram bot development services for seamless integration.",
-    "3": "Robust and scalable web applications (e.g., CRM, project management tools) tailored to specific business needs. Web application development services encompass front-end/back-end development, database design, and API integration.",
+    "3": "Robust and scalable web applications (e.g., CRM, project management tools, facial recognition) tailored to specific business needs. Web application development services encompass front-end/back-end development, database design, and API integration.",
     "4": "Custom APIs designed and developed for seamless system communication, connecting services to external platforms. API integration services available to extend functionality and automate data exchange."
   },
   "Resume": {
     "title": "About me",
-    "description": "I am a full-stack developer with a passion for crafting digital experiences. I have experience in various programming languages and technologies, and I am always eager to learn new things.",
     "list": {
       "experience": "Experience",
       "education": "Education",
@@ -66,7 +65,7 @@
     "experience": {
       "icon": "/assets/resume/badge.svg",
       "title": "My Experience",
-      "description": "desc",
+      "description": "I have a background in IT and software development, with experience in both corporate and freelance environments. My expertise spans across various technologies and programming languages, allowing me to deliver comprehensive solutions tailored to specific business needs.",
       "items": [
         {
           "company": "Gualini Lamiere International S.p.A.",
@@ -87,7 +86,7 @@
     },
     "education": {
       "title": "My Education",
-      "description": "education",
+      "description": "My educational background includes a Bachelor's degree in Computer Science. I have also completed a technical diploma in business information systems.",
       "items": [
         {
           "company": "AIO Blockchain Lab SRL",
@@ -108,7 +107,7 @@
     },
     "skills": {
       "title": "My Skills",
-      "description": "skills description",
+      "description": "A comprehensive list of my technical skills and proficiencies.",
       "items": [
         {
           "icon": "html",
@@ -135,14 +134,66 @@
           "name": "React"
         },
         {
+          "icon": "typescript",
+          "name": "TypeScript"
+        },
+        {
           "icon": "next",
           "name": "Next.js"
+        },
+        {
+          "icon": "vite",
+          "name": "Vite"
+        },
+        {
+          "icon": "express",
+          "name": "Express.js"
+        },
+        {
+          "icon": "flask",
+          "name": "Flask"
+        },
+        {
+          "icon": "mongodb",
+          "name": "MongoDB"
+        },
+        {
+          "icon": "mysql",
+          "name": "MySQL"
+        },
+        {
+          "icon": "docker",
+          "name": "Docker"
+        },
+        {
+          "icon": "nginx",
+          "name": "Nginx"
+        },
+        {
+          "icon": "git",
+          "name": "Git"
+        },
+        {
+          "icon": "qlik",
+          "name": "Qlik Sense"
+        },
+        {
+          "icon": "tableau",
+          "name": "Tableau"
+        },
+        {
+          "icon": "telegram",
+          "name": "Telegram Mini App"
+        },
+        {
+          "icon": "whatsapp",
+          "name": "WhatsAppWeb.js"
         }
       ]
     },
     "aboutme": {
       "title": "About Me",
-      "description": "about me description",
+      "description": "I am a full-stack developer with a passion for crafting digital experiences. I have experience in various programming languages and technologies, and I am always eager to learn new things.",
       "info": [
         {
           "title": "Name",
@@ -154,6 +205,63 @@
         }
       ]
     }
+  },
+  "Work": {
+    "projects": [
+      {
+        "category": "bot",
+        "title": "Whatsapp Bot",
+        "description": "A WhatsApp bot that sends reminder messages with information about the time and location of training sessions or matches for a team. An excellent tool for keeping team members informed and organized.",
+        "stack": ["whatsapp", "js", "node"],
+        "image": "/assets/work/whatsapp.JPG"
+      },
+      {
+        "category": "Full-Stack",
+        "title": "MES",
+        "description": "A comprehensive Manufacturing Execution System (MES) designed to monitor and track employee work hours on client tasks. Users log their daily hours, detailing the tasks performed. The system includes an admin dashboard for viewing detailed statistics by period, client, and user, with options to export data to Excel for further analysis.",
+        "stack": ["react", "css", "vite", "node", "mysql", "express"],
+        "image": "/assets/work/mes.jpg"
+      },
+      {
+        "category": "Full-Stack",
+        "title": "Facial Recognition System",
+        "description": "A facial recognition system designed for attendance tracking and leave management. The system allows employees to clock in and out using facial recognition, and also manage leave requests for vacation or sick days. An admin dashboard is available for HR to oversee attendance records and approve or reject leave requests.",
+        "stack": [
+          "react",
+          "css",
+          "vite",
+          "mongodb",
+          "flask",
+          "docker",
+          "nginx"
+        ],
+        "image": "/assets/work/facial.png"
+      },
+      {
+        "category": "Front-end",
+        "title": "Telegram Mini App",
+        "description": "A Telegram mini app designed for event organizers, featuring a landing page and a whitelist registration process for receiving updates about sponsored events.",
+        "stack": [
+          "react",
+          "css",
+          "vite",
+          "mongodb",
+          "express",
+          "nginx",
+          "telegram"
+        ],
+        "image": "/assets/work/tma-en.JPG",
+        "live": "https://t.me/teleclubclubbing_bot/Teleclub"
+      },
+      {
+        "category": "Front-end",
+        "title": "Portfolio",
+        "description": "A personal portfolio website showcasing my projects, skills, and experience. It includes detailed information about my work, education, and the services I offer. The website is designed to provide a comprehensive overview of my professional background and capabilities.",
+        "stack": ["react", "tailwind", "next"],
+        "image": "/assets/work/thumb1.png",
+        "live": "/"
+      }
+    ]
   },
   "Contact": {
     "title": "Let's work together",
