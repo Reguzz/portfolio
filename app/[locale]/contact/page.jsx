@@ -109,8 +109,16 @@ const Contact = () => {
                     <div className="text-[28px]">{item.icon}</div>
                   </div>
                   <div className="flex-1">
-                    <h4 className=" text-white/60">{t(`info.${item.title}`)}</h4>
-                    <p className="text-xl">{item.description}</p>
+                    <h4 className=" text-white/60">
+                      {t(`info.${item.title}`)}
+                    </h4>
+                    {item.title === "email" ? (
+                      <a className="text-xl" href={`mailto:${item.description}`}>
+                        {item.description}
+                      </a>
+                    ) : (
+                      <p className="text-xl">{item.description}</p>
+                    )}
                   </div>
                 </li>
               ))}

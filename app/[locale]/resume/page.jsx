@@ -31,7 +31,7 @@ const Resume = () => {
   const itemsExp = messages.Resume.experience.items;
   const itemsEdu = messages.Resume.education.items;
   const itemsSkills = messages.Resume.skills.items;
-  const itemsAboutme = messages.Resume.aboutme.info;
+  const itemsAboutme = messages.Resume.info;
 
   return (
     <motion.section
@@ -57,7 +57,7 @@ const Resume = () => {
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{t("experience.title")}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-auto">
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {t("experience.description")}
                 </p>
                 <ScrollArea className="h-[500px]">
@@ -84,7 +84,7 @@ const Resume = () => {
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{t("education.title")}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-auto">
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {t("education.description")}
                 </p>
                 <ScrollArea className="h-[500px]">
@@ -112,7 +112,7 @@ const Resume = () => {
               <div className="flex flex-col gap-[30px]">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
                   <h3 className="text-4xl font-bold">{t("skills.title")}</h3>
-                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-auto">
+                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                     {t("skills.description")}
                   </p>
                 </div>
@@ -142,14 +142,21 @@ const Resume = () => {
             >
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-4xl font-bold">{t("aboutme.title")}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-auto">
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {t("aboutme.description")}
                 </p>
-                <ul>
+                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
                   {itemsAboutme.map((item, index) => (
-                    <li key={index}>
-                      <span>{item.title}</span>
-                      <span>{item.value}</span>
+                    <li
+                      key={index}
+                      className="flex items-center justify-center xl:justify-start gap-4"
+                    >
+                      <span className="text-white/60">{item.title}</span>
+                      {item.title === "Email" ? (
+                        <span className="text-xl" href={`mailto:${item.value}`}>{item.value}</span>
+                      ) : (
+                        <span className="text-xl">{item.value}</span>
+                      )}
                     </li>
                   ))}
                 </ul>
