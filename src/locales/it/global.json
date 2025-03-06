@@ -1,0 +1,117 @@
+{
+  "HomePage": {
+    "title": "Portfolio",
+    "hello": "Ciao sono",
+    "description": "I excel at crafting digital experiences and I am proficent in various programming languages and technologies."
+  },
+  "Stats": {
+    "years": "Years of experience",
+    "projects": "Projects completed",
+    "technologies": "Technologies mastered",
+    "commits": "Code Commits"
+  },
+  "Nav": {
+    "home": "Home",
+    "services": "Services",
+    "resume": "Resume",
+    "work": "Work",
+    "contact": "Contact"
+  },
+  "MobileNav": {
+    "home": "Home",
+    "services": "Services",
+    "resume": "Resume",
+    "work": "Work",
+    "contact": "Contact"
+  },
+  "LocaleSwitcher": {
+    "locale": "{locale, select, it {🇮🇹} en {🇬🇧} other {Unknown}}",
+    "localeXL": "{locale, select, it {🇮🇹 Italiano} en {🇬🇧 English} other {Unknown}}",
+    "label": "🌐",
+    "labelXL": "Cambia Lingua"
+  },
+  "Services": {
+    "1": "Website development services, from simple landing pages to complex e-commerce platforms. Services include development, deployment, maintenance.",
+    "2": "Engaging Telegram mini apps and bots developed to automate tasks and enhance user interaction. Specialized Telegram bot development services for seamless integration.",
+    "3": "Robust and scalable web applications (e.g., CRM, project management tools) tailored to specific business needs. Web application development services encompass front-end/back-end development, database design, and API integration.",
+    "4": "Custom APIs designed and developed for seamless system communication, connecting services to external platforms. API integration services available to extend functionality and automate data exchange."
+  },
+  "Resume": {
+    "title": "About me",
+    "description": "I am a full-stack developer with a passion for crafting digital experiences. I have experience in various programming languages and technologies, and I am always eager to learn new things.",
+    "info": [
+      {
+        "title": "Name",
+        "value": "Fabrizio Reguzzi"
+      },
+      {
+        "title": "Phone",
+        "value": "(+39) 389 2958220"
+      },
+      {
+        "title": "Experience",
+        "value": "4+ Years"
+      },
+      {
+        "title": "Email",
+        "value": "fabrizio.reguzzi@gmail.com"
+      },
+      {
+        "title": "Languages",
+        "value": "English, Italian"
+      }
+    ],
+    "experience": {
+      "icon": "/assets/resume/badge.svg",
+      "title": "My Experience",
+      "description": "desc",
+      "items": [
+        {
+          "company": "Gualini Lamiere International S.p.A.",
+          "position": "IT Specialist",
+          "period": "2021 - Present"
+        },
+        {
+          "company": "Studio Montanelli",
+          "position": "Freelance Full-stack Developer",
+          "period": "Summer 2020"
+        },
+        {
+          "company": "Gualini Lamiere International S.p.A.",
+          "position": "IT Specialist Stagista",
+          "period": "2020 - 2021"
+        }
+      ]
+    }
+  },
+  "Contact": {
+    "title": "Contattami",
+    "description": "Hai un progetto in mente o hai bisogno di assistenza? Contattami e sarò felice di aiutarti.",
+    "form": {
+      "firstname": "Nome",
+      "lastname": "Cognomme",
+      "email": "Indirizzo email",
+      "phone": "Numero di telefono",
+      "services": {
+        "label": "Seleziona un servizio",
+        "web": "Sito web",
+        "telegram": "Telegram Bot & TMA",
+        "webdev": "Web Development",
+        "api": "API",
+        "other": "Altro"
+      },
+      "message": "Scrivi il tuo messaggio qui.",
+      "submit": "Invia messaggio"
+    },
+    "info": {
+      "phone": "Telefono",
+      "email": "Email",
+      "address": "Indirizzo"
+    }
+  },
+  "NotFound": {
+    "title": "404",
+    "description": "La pagina che stai cercando non esiste.",
+    "action": "Torna alla home"
+  }
+}
