@@ -1,6 +1,7 @@
 import "./App.css";
 import {
   BrowserRouter,
+  HashRouter,
   Routes,
   Route,
   useParams,
@@ -31,15 +32,15 @@ function LangWrapper() {
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
-          <Route path="/portfolio/:lang" element={<LangWrapper />}>
+          <Route path="/:lang" element={<LangWrapper />}>
             <Route index element={<Home />} />
             <Route path="home" element={<Home />} />
           </Route>
           <Route path="/*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
