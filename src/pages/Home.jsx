@@ -1,40 +1,39 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
-import reactLogo from "../assets/react.svg";
-import viteLogo from "/vite.svg";
-import { useParams } from "react-router-dom";
+import { CvButton, Photo, Social, Stats } from "../../components";
 
 const Home = () => {
-  const [count, setCount] = useState(0);
-  const { t, i18n } = useTranslation("global");
-  const { lang } = useParams();
-  const langi18n = i18n.language;
+  const { t } = useTranslation("global");
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Lingua selezionata: {lang}</h1>
-      <h1>Lingua selezionata: {langi18n}</h1>
-      <h1>Vite + React</h1>
-      <h1>{t("HomePage.hello")}</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <section className="h-full">
+        <div className="container mx-auto h-full">
+          <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
+            <div className="text-center xl:text-left order-2 xl:order-none">
+              <span className="text-xl">Software Developer</span>
+              <h1 className="h1 mb-6">
+                {t("HomePage.hello")} <br />{" "}
+                <span className="text-accent">Fabrizio Reguzzi</span>
+              </h1>
+              <p className="max-w-[500px] mb-9 text-white/80">
+                {t("HomePage.description")}
+              </p>
+              <div className="flex flex-col xl:flex-row items-center gap-8">
+                <CvButton />
+                <div className="mb-8 xl:mb-0">
+                  <Social
+                    containerStyles="flex gap-6"
+                    iconStyles="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="order-1 xl:order-none mb-8 xl:mb-0">
+              <Photo />
+            </div>
+          </div>
+        </div>
+        <Stats />
+      </section>
     </>
   );
 };

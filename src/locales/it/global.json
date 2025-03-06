@@ -12,17 +12,17 @@
   },
   "Nav": {
     "home": "Home",
-    "services": "Services",
-    "resume": "Resume",
-    "work": "Work",
-    "contact": "Contact"
+    "services": "Servizi",
+    "resume": "Esperienze",
+    "work": "Progetti",
+    "contact": "Contatti"
   },
   "MobileNav": {
     "home": "Home",
-    "services": "Services",
-    "resume": "Resume",
-    "work": "Work",
-    "contact": "Contact"
+    "services": "Servizi",
+    "resume": "Esperienze",
+    "work": "Progetti",
+    "contact": "Contatti"
   },
   "LocaleSwitcher": {
     "locale": "{locale, select, it {🇮🇹} en {🇬🇧} other {Unknown}}",

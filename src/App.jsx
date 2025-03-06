@@ -1,15 +1,28 @@
 import "./App.css";
 import {
-  BrowserRouter,
   HashRouter,
   Routes,
   Route,
   useParams,
   Outlet,
+  Navigate,
 } from "react-router-dom";
-import { Home, NotFound } from "./pages";
+import { Home, Cv, NotFound, Services, Resume, Work, Contact } from "./pages";
 import i18n from "i18next"; // make sure to import i18n
 import { useEffect } from "react";
+import { Header, StairTransition, PageTransition } from "../components";
+
+function Wrapper() {
+  return (
+    <>
+      <Header />
+      <StairTransition />
+      <PageTransition>
+        <Outlet />
+      </PageTransition>
+    </>
+  );
+}
 
 function LangWrapper() {
   const { lang } = useParams();
@@ -21,6 +34,21 @@ function LangWrapper() {
   useEffect(() => {
     document.documentElement.lang = lang;
   }, [lang]);
+
+  // useEffect(() => {
+  //   const handleLanguageChange = (lng) => {
+  //     if (allowedLangs.includes(lng)) {
+  //       // window.location.pathname = `/${lng}`;
+  //       console.log(window.location);
+  //     }
+  //   };
+
+  //   i18n.on('languageChanged', handleLanguageChange);
+
+  //   return () => {
+  //     i18n.off('languageChanged', handleLanguageChange);
+  //   };
+  // }, []);
 
   if (!allowedLangs.includes(lang)) {
     return <NotFound />;
@@ -34,11 +62,19 @@ function App() {
     <>
       <HashRouter>
         <Routes>
-          <Route path="/:lang" element={<LangWrapper />}>
-            <Route index element={<Home />} />
-            <Route path="home" element={<Home />} />
+          <Route element={<Wrapper />}>
+            <Route path="/" element={<Navigate to="/it" replace />} />
+            <Route path="/:lang" element={<LangWrapper />}>
+              <Route index element={<Home />} />
+              <Route path="home" element={<Home />} />
+              <Route path="cv" element={<Cv />} />
+              <Route path="services" element={<Services />} />
+              <Route path="resume" element={<Resume />} />
+              <Route path="work" element={<Work />} />
+              <Route path="contact" element={<Contact />} />
+            </Route>
+            <Route path="/*" element={<NotFound />} />
           </Route>
-          <Route path="/*" element={<NotFound />} />
         </Routes>
       </HashRouter>
     </>
