@@ -14,6 +14,8 @@ import {
 import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 const info = [
   {
@@ -29,7 +31,22 @@ const info = [
 ];
 
 const Contact = () => {
-  const { t } = useTranslation("global");
+  const { t, i18n } = useTranslation("global");
+  const { lang } = useParams();
+
+  useEffect(() => {
+    document.title = t("Contact.title");
+  }, [i18n.language, lang]);
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted");
+    const info = t("Resume.info");
+    const email = info.filter((el) => el.title === "Email")[0].value;
+
+    window.open(`mailto:${email}?subject=subject&body=the ddewe`, "_blank");
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -98,7 +115,7 @@ const Contact = () => {
                 placeholder={`${t("Contact.form.message")}`}
                 className="h-[200px]"
               />
-              <Button size="md" className="max-w-40">
+              <Button size="md" className="max-w-40" onClick={handleFormSubmit}>
                 {t("Contact.form.submit")}
               </Button>
             </form>
@@ -112,12 +129,13 @@ const Contact = () => {
                   </div>
                   <div className="flex-1">
                     <h4 className=" text-white/60">
-                      {t(`info.${item.title}`)}
+                      {t(`Contact.info.${item.title}`)}
                     </h4>
                     {item.title === "email" ? (
                       <a
                         className="text-xl"
                         href={`mailto:${item.description}`}
+                        // href={'mailto:email@gmail.com?subject=subject&body=the ddewe'}
                       >
                         {item.description}
                       </a>

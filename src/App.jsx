@@ -28,27 +28,15 @@ function LangWrapper() {
   const { lang } = useParams();
   const allowedLangs = ["en", "it"]; // specify allowed languages here
   const langi18n = i18n.language;
-  if (lang !== langi18n) {
-    i18n.changeLanguage(lang);
-  }
+
   useEffect(() => {
-    document.documentElement.lang = lang;
+    if (allowedLangs.includes(lang)) {
+      if (lang !== langi18n) {
+        i18n.changeLanguage(lang);
+        document.documentElement.lang = lang;
+      }
+    }
   }, [lang]);
-
-  // useEffect(() => {
-  //   const handleLanguageChange = (lng) => {
-  //     if (allowedLangs.includes(lng)) {
-  //       // window.location.pathname = `/${lng}`;
-  //       console.log(window.location);
-  //     }
-  //   };
-
-  //   i18n.on('languageChanged', handleLanguageChange);
-
-  //   return () => {
-  //     i18n.off('languageChanged', handleLanguageChange);
-  //   };
-  // }, []);
 
   if (!allowedLangs.includes(lang)) {
     return <NotFound />;

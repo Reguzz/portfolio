@@ -10,7 +10,7 @@ export default function NotFound() {
       <h1 className="text-4xl font-semibold">{t("NotFound.title")}</h1>
       <div className="flex flex-col items-start">
         <p className="text-white/60">{t("NotFound.description")}</p>
-        <Link className="text-white/60 hover:text-accent" to={`/${locale}`}>
+        <Link className="text-accent" to={`/${locale}`}>
           {t("NotFound.action")}
         </Link>
       </div>

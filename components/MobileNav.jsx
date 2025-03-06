@@ -6,7 +6,7 @@ import {
   SheetTitle,
   SheetDescription,
 } from "./ui";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { CiMenuFries } from "react-icons/ci";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -35,10 +35,10 @@ const links = [
 ];
 
 const MobileNav = () => {
-  const { t, i18n } = useTranslation("global");
-  const locale = i18n.language;
+  const { t } = useTranslation("global");
   const pathname = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const { lang } = useParams();
 
   return (
     <Sheet open={isOpen}>
@@ -54,7 +54,7 @@ const MobileNav = () => {
             <SheetTitle></SheetTitle>
             <SheetDescription></SheetDescription>
           </SheetHeader>
-          <Link to={`/${locale}`}>
+          <Link to={`/${lang}`}>
             <h1 className="text-4xl font-semibold">
               Fabrizio<span className="text-accent">.</span>
             </h1>
@@ -63,10 +63,10 @@ const MobileNav = () => {
         <nav className="flex flex-col items-center justify-center gap-8">
           {links.map((link, index) => (
             <Link
-              to={`/${locale}${link.path}`}
+              to={`/${lang}${link.path}`}
               key={index}
               className={`${
-                pathname.pathname === `/${locale}${link.path}` &&
+                pathname.pathname === `/${lang}${link.path}` &&
                 "text-accent border-b-2 border-accent"
               } capitalize text-xl font-medium hover:text-accent transition-all`}
             >

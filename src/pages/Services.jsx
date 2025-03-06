@@ -1,5 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const services = [
   {
@@ -28,7 +30,13 @@ const services = [
   },
 ];
 const Services = () => {
-  const { t } = useTranslation("global");
+  const { t, i18n } = useTranslation("global");
+  const { lang } = useParams();
+
+  useEffect(() => {
+    document.title = t("Services.title");
+  }, [i18n.language, lang]);
+
   return (
     <section className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0">
       <div className="container mx-auto">

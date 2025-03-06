@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTransition } from "react";
 import {
   Select,
@@ -9,6 +9,7 @@ import {
   SelectValue,
 } from "./ui/";
 import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 
 export default function LocaleSwitcherSelect({
   children,
@@ -18,12 +19,21 @@ export default function LocaleSwitcherSelect({
   const [isPending, startTransition] = useTransition();
   const { i18n } = useTranslation();
   const [selectedOption, setSelectedOption] = useState(defaultValue);
+  const { lang } = useParams();
 
   function onSelectChange(value) {
     startTransition(() => {
       i18n.changeLanguage(value);
-    });
+    }); 
+    console.log(window.location.hash)
+    const currentHash = window.location.hash;
+    const newHash = currentHash.replace(/#\/[^/]+/, `#/${value}`);
+    window.location.hash = newHash;
   }
+
+  useEffect(() => {
+    setSelectedOption(lang);
+  }, [lang]);
 
   return (
     <Select

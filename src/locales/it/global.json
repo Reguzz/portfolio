@@ -1,26 +1,26 @@
 {
   "HomePage": {
     "title": "Portfolio",
-    "hello": "Ciao sono",
-    "description": "I excel at crafting digital experiences and I am proficent in various programming languages and technologies."
+    "hello": "Ciao, sono",
+    "description": "uno sviluppatore full-stack con una passione per la creazione di esperienze digitali."
   },
   "Stats": {
-    "years": "Years of experience",
-    "projects": "Projects completed",
-    "technologies": "Technologies mastered",
+    "years": "Anni di esperienza",
+    "projects": "Progetti completati",
+    "technologies": "Tecnologie utilizzate",
     "commits": "Code Commits"
   },
   "Nav": {
     "home": "Home",
     "services": "Servizi",
-    "resume": "Esperienze",
+    "resume": "Profilo",
     "work": "Progetti",
-    "contact": "Contatti"
+    "contact": "Parla con me!"
   },
   "MobileNav": {
     "home": "Home",
     "services": "Servizi",
-    "resume": "Esperienze",
+    "resume": "Profilo",
     "work": "Progetti",
     "contact": "Contatti"
   },
@@ -31,65 +31,245 @@
     "labelXL": "Cambia Lingua"
   },
   "Services": {
-    "1": "Website development services, from simple landing pages to complex e-commerce platforms. Services include development, deployment, maintenance.",
-    "2": "Engaging Telegram mini apps and bots developed to automate tasks and enhance user interaction. Specialized Telegram bot development services for seamless integration.",
-    "3": "Robust and scalable web applications (e.g., CRM, project management tools) tailored to specific business needs. Web application development services encompass front-end/back-end development, database design, and API integration.",
-    "4": "Custom APIs designed and developed for seamless system communication, connecting services to external platforms. API integration services available to extend functionality and automate data exchange."
+    "title": "Servizi",
+    "1": "Servizi di sviluppo di siti web, da semplici landing page a complesse piattaforme. I servizi includono sviluppo, implementazione e manutenzione.",
+    "2": "Mini app e bot di Telegram coinvolgenti, sviluppati per automatizzare le attività e migliorare l'interazione con gli utenti. Servizi specializzati di sviluppo di bot per Telegram per una perfetta integrazione.",
+    "3": "Applicazioni web robuste e scalabili (ad esempio, CRM, strumenti di gestione dei progetti) su misura per le specifiche esigenze aziendali. I servizi di sviluppo di applicazioni web comprendono lo sviluppo front-end/back-end, la progettazione di database e l'integrazione di API.",
+    "4": "API personalizzate progettate e sviluppate collegando i servizi a piattaforme esterne. Servizi di integrazione API disponibili per estendere le funzionalità e automatizzare lo scambio di dati."
   },
   "Resume": {
-    "title": "About me",
-    "description": "I am a full-stack developer with a passion for crafting digital experiences. I have experience in various programming languages and technologies, and I am always eager to learn new things.",
+    "title": "Profilo",
+    "list": {
+      "experience": "Esperienza",
+      "education": "Educazione",
+      "skills": "Competenze",
+      "aboutme": "Il mio profilo"
+    },
     "info": [
       {
-        "title": "Name",
+        "title": "Nome",
         "value": "Fabrizio Reguzzi"
-      },
-      {
-        "title": "Phone",
-        "value": "(+39) 389 2958220"
-      },
-      {
-        "title": "Experience",
-        "value": "4+ Years"
       },
       {
         "title": "Email",
         "value": "fabrizio.reguzzi@gmail.com"
       },
       {
-        "title": "Languages",
-        "value": "English, Italian"
+        "title": "Esperienza",
+        "value": "4+ Anni"
+      },
+      {
+        "title": "Lingue",
+        "value": "Inglese, Italiano"
       }
     ],
     "experience": {
-      "icon": "/assets/resume/badge.svg",
-      "title": "My Experience",
-      "description": "desc",
+      "title": "Le mie esperienze",
+      "description": "Ho esperienza nel settore IT e nello sviluppo software, sia in aziende che come freelance. Le mie competenze coprono diverse tecnologie e linguaggi di programmazione, e questo mi permette di creare soluzioni complete e adatte alle specifiche esigenze delle aziende.",
       "items": [
         {
           "company": "Gualini Lamiere International S.p.A.",
           "position": "IT Specialist",
-          "period": "2021 - Present"
+          "period": "2021 - Oggi"
         },
         {
           "company": "Studio Montanelli",
           "position": "Freelance Full-stack Developer",
-          "period": "Summer 2020"
+          "period": "Estate 2020"
         },
         {
           "company": "Gualini Lamiere International S.p.A.",
-          "position": "IT Specialist Stagista",
+          "position": "IT Specialist Intern",
           "period": "2020 - 2021"
         }
       ]
+    },
+    "education": {
+      "title": "La mia formazione",
+      "description": "Il mio percorso formativo comprende una laurea in Informatica. Ho anche conseguito un diploma tecnico in sistemi informativi aziendali.",
+      "items": [
+        {
+          "company": "AIO Blockchain Lab SRL",
+          "position": "Blockchain and Digital assets",
+          "period": "set 2022 - mar 2023"
+        },
+        {
+          "company": "Università degli Studi di Milano-Bicocca",
+          "position": "Bachelor of Science - BS, Computer Science",
+          "period": "ott 2018 - mar 2022"
+        },
+        {
+          "company": "Istituto Tecnico Commerciale B.Belotti",
+          "position": "Diploma Istituto Tecnico , sistemi informativi aziendali",
+          "period": "2013 - 2018"
+        }
+      ]
+    },
+    "skills": {
+      "title": "Le mie competenze",
+      "description": "Un elenco completo delle mie capacità e competenze tecniche.",
+      "items": [
+        {
+          "icon": "html",
+          "name": "Html5"
+        },
+        {
+          "icon": "css",
+          "name": "Css3"
+        },
+        {
+          "icon": "tailwind",
+          "name": "TailwindCss"
+        },
+        {
+          "icon": "js",
+          "name": "JavaScript"
+        },
+        {
+          "icon": "node",
+          "name": "Node.js"
+        },
+        {
+          "icon": "react",
+          "name": "React"
+        },
+        {
+          "icon": "typescript",
+          "name": "TypeScript"
+        },
+        {
+          "icon": "next",
+          "name": "Next.js"
+        },
+        {
+          "icon": "vite",
+          "name": "Vite"
+        },
+        {
+          "icon": "express",
+          "name": "Express.js"
+        },
+        {
+          "icon": "flask",
+          "name": "Flask"
+        },
+        {
+          "icon": "mongodb",
+          "name": "MongoDB"
+        },
+        {
+          "icon": "mysql",
+          "name": "MySQL"
+        },
+        {
+          "icon": "docker",
+          "name": "Docker"
+        },
+        {
+          "icon": "nginx",
+          "name": "Nginx"
+        },
+        {
+          "icon": "git",
+          "name": "Git"
+        },
+        {
+          "icon": "qlik",
+          "name": "Qlik Sense"
+        },
+        {
+          "icon": "tableau",
+          "name": "Tableau"
+        },
+        {
+          "icon": "telegram",
+          "name": "Telegram Mini App"
+        },
+        {
+          "icon": "whatsapp",
+          "name": "WhatsAppWeb.js"
+        }
+      ]
+    },
+    "aboutme": {
+      "title": "Il mio profilo",
+      "description": "Sono uno sviluppatore full-stack con la passione per la creazione di esperienze digitali. Ho esperienza in diversi linguaggi di programmazione e tecnologie e sono sempre desideroso di imparare cose nuove.",
+      "info": [
+        {
+          "title": "Nome",
+          "value": "Fabrizio Reguzzi"
+        },
+        {
+          "title": "Esperienza",
+          "value": "4+ Anni"
+        }
+      ]
     }
+  },
+  "Work": {
+    "title": "Progetti",
+    "projects": [
+      {
+        "category": "bot",
+        "title": "Whatsapp Bot",
+        "description": "Un bot WhatsApp che invia messaggi di promemoria con informazioni sull'orario e il luogo delle sessioni di allenamento o delle partite di una squadra. Uno strumento eccellente per tenere informati e organizzati i membri della squadra.",
+        "stack": ["whatsapp", "js", "node"],
+        "image": "/assets/work/whatsapp.JPG"
+      },
+      {
+        "category": "Full-Stack",
+        "title": "MES",
+        "description": "Un sistema completo di Manufacturing Execution System (MES) progettato per monitorare e tenere traccia delle ore di lavoro dei dipendenti sulle attività dei clienti. Gli utenti registrano le loro ore giornaliere, specificando le attività svolte. Il sistema comprende un cruscotto di amministrazione per visualizzare statistiche dettagliate per periodo, cliente e utente, con la possibilità di esportare i dati in Excel per ulteriori analisi.",
+        "stack": ["react", "css", "vite", "node", "mysql", "express"],
+        "image": "/assets/work/mes.jpg"
+      },
+      {
+        "category": "Full-Stack",
+        "title": "Facial Recognition System",
+        "description": "Un sistema di riconoscimento facciale progettato per la rilevazione delle presenze e la gestione dei permessi. Il sistema consente ai dipendenti di timbrare il cartellino di presenza e di uscita utilizzando il riconoscimento facciale, nonché di gestire le richieste di assenza per i giorni di ferie o di malattia.È disponibile una dashboard di amministrazione per le risorse umane, che può controllare i registri delle presenze e approvare o rifiutare le richieste di assenza.",
+        "stack": [
+          "react",
+          "css",
+          "vite",
+          "mongodb",
+          "flask",
+          "docker",
+          "nginx"
+        ],
+        "image": "/assets/work/facial.png"
+      },
+      {
+        "category": "Front-end",
+        "title": "Telegram Mini App",
+        "description": "Una mini-app di Telegram progettata per gli organizzatori di eventi, con una landing page e un processo di registrazione in whitelist per ricevere aggiornamenti sugli eventi sponsorizzati.",
+        "stack": [
+          "react",
+          "css",
+          "vite",
+          "mongodb",
+          "express",
+          "nginx",
+          "telegram"
+        ],
+        "image": "/assets/work/tma-en.JPG",
+        "live": "https://t.me/teleclubclubbing_bot/Teleclub"
+      },
+      {
+        "category": "Front-end",
+        "title": "Portfolio",
+        "description": "Un sito web di portfolio personale che presenta i miei progetti, le mie capacità e la mia esperienza. Include informazioni dettagliate sul mio lavoro, sulla mia formazione e sui servizi che offro. Il sito è stato progettato per fornire una panoramica completa del mio background professionale.",
+        "stack": ["react", "tailwind", "vite"],
+        "image": "/assets/work/thumb1.png",
+        "live": "/"
+      }
+    ]
   },
   "Contact": {
     "title": "Contattami",
     "description": "Hai un progetto in mente o hai bisogno di assistenza? Contattami e sarò felice di aiutarti.",
     "form": {
       "firstname": "Nome",
-      "lastname": "Cognomme",
+      "lastname": "Cognome",
       "email": "Indirizzo email",
       "phone": "Numero di telefono",
       "services": {
@@ -109,6 +289,7 @@
       "address": "Indirizzo"
     }
   },
+  "Cv": { "title": "CV" },
   "NotFound": {
     "title": "404",
     "description": "La pagina che stai cercando non esiste.",

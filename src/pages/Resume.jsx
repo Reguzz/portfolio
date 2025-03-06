@@ -36,6 +36,8 @@ import {
   TooltipTrigger,
 } from "../../components/ui";
 import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const icons = {
   html: <FaHtml5 />,
@@ -61,7 +63,11 @@ const icons = {
 };
 
 const Resume = () => {
-  const { t } = useTranslation("global");
+  const { t, i18n } = useTranslation("global");
+  const { lang } = useParams();
+  useEffect(() => {
+    document.title = t("Resume.title");
+  }, [i18n.language, lang]);
 
   const itemsExp = t("Resume.experience.items");
   const itemsEdu = t("Resume.education.items");
@@ -126,7 +132,9 @@ const Resume = () => {
             </TabsContent>
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">{t("Resume.education.title")}</h3>
+                <h3 className="text-4xl font-bold">
+                  {t("Resume.education.title")}
+                </h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {t("Resume.education.description")}
                 </p>
@@ -154,7 +162,9 @@ const Resume = () => {
             <TabsContent value="skills" className="w-full h-full">
               <div className="flex flex-col gap-[30px]">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                  <h3 className="text-4xl font-bold">{t("Resume.skills.title")}</h3>
+                  <h3 className="text-4xl font-bold">
+                    {t("Resume.skills.title")}
+                  </h3>
                   <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                     {t("Resume.skills.description")}
                   </p>
@@ -184,7 +194,9 @@ const Resume = () => {
               className="w-full text-center xl:text-left"
             >
               <div className="flex flex-col gap-[30px]">
-                <h3 className="text-4xl font-bold">{t("Resume.aboutme.title")}</h3>
+                <h3 className="text-4xl font-bold">
+                  {t("Resume.aboutme.title")}
+                </h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {t("Resume.aboutme.description")}
                 </p>

@@ -6,8 +6,9 @@ import "react-pdf/dist/esm/Page/TextLayer.css";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
-import cv from "../../public/cv.pdf";
-import cvEn from "../../public/cv-en.pdf";
+import cv from "../assets/cv.pdf";
+import cvEn from "../assets/cv-en.pdf";
+import { useParams } from "react-router-dom";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.mjs",
@@ -15,10 +16,11 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 ).toString();
 
 const Cv = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation('global');
   const locale = i18n.language;
   const [file, setFile] = useState(cv);
   const [numPages, setNumPages] = useState();
+  const { lang } = useParams();
 
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -29,6 +31,10 @@ const Cv = () => {
       setFile(cvEn);
     }
   }, [locale]);
+
+  useEffect(() => {
+    document.title = t("Cv.title");
+  }, [i18n.language, lang]);
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);

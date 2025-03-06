@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
@@ -26,14 +26,16 @@ const Work = () => {
   const [project, setProject] = useState();
   const [index, setIndex] = useState(0);
 
-  const { t } = useTranslation("global");
+  const { t, i18n } = useTranslation("global");
+  const { lang } = useParams();
+
+  useEffect(() => {
+    document.title = t("Work.title");
+    if (projects.length > 0) setProject(projects[0]);
+  }, [i18n.language, lang]);
 
   const projects = t("Work.projects");
   const skills = t("Resume.skills.items");
-
-  useEffect(() => {
-    if (projects.length > 0) setProject(projects[0]);
-  }, []);
 
   const handleSlideChange = (swiper) => {
     const currentIndex = swiper.activeIndex;

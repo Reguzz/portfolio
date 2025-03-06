@@ -15,7 +15,7 @@
     "services": "Services",
     "resume": "Resume",
     "work": "Work",
-    "contact": "Contact"
+    "contact": "Contact me"
   },
   "MobileNav": {
     "home": "Home",
@@ -31,13 +31,14 @@
     "labelXL": "Change language"
   },
   "Services": {
-    "1": "Website development services, from simple landing pages to complex e-commerce platforms. Services include development, deployment, maintenance.",
+    "title": "Services",
+    "1": "Website development services, from simple landing pages to complex platforms. Services include development, deployment, maintenance.",
     "2": "Engaging Telegram mini apps and bots developed to automate tasks and enhance user interaction. Specialized Telegram bot development services for seamless integration.",
     "3": "Robust and scalable web applications (e.g., CRM, project management tools, facial recognition) tailored to specific business needs. Web application development services encompass front-end/back-end development, database design, and API integration.",
     "4": "Custom APIs designed and developed for seamless system communication, connecting services to external platforms. API integration services available to extend functionality and automate data exchange."
   },
   "Resume": {
-    "title": "About me",
+    "title": "Resume",
     "list": {
       "experience": "Experience",
       "education": "Education",
@@ -207,6 +208,7 @@
     }
   },
   "Work": {
+    "title": "Work",
     "projects": [
       {
         "category": "bot",
@@ -257,7 +259,7 @@
         "category": "Front-end",
         "title": "Portfolio",
         "description": "A personal portfolio website showcasing my projects, skills, and experience. It includes detailed information about my work, education, and the services I offer. The website is designed to provide a comprehensive overview of my professional background and capabilities.",
-        "stack": ["react", "tailwind", "next"],
+        "stack": ["react", "tailwind", "vite"],
         "image": "/assets/work/thumb1.png",
         "live": "/"
       }
@@ -288,6 +290,7 @@
       "address": "Address"
     }
   },
+  "Cv": { "title": "CV" },
   "NotFound": {
     "title": "404",
     "description": "The page you are looking for does not exist.",
