@@ -1,13 +1,18 @@
 # Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
-
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: ["master"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+
+  # Runs when a pull request is merged
+  pull_request:
+    types: [closed]
+    branches:
+      - master
 
 # Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
 permissions:
