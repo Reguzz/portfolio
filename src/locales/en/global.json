@@ -215,7 +215,7 @@
         "title": "Whatsapp Bot",
         "description": "A WhatsApp bot that sends reminder messages with information about the time and location of training sessions or matches for a team. An excellent tool for keeping team members informed and organized.",
         "stack": ["whatsapp", "js", "node"],
-        "image": "/assets/work/whatsapp.JPG"
+        "image": "/assets/work/whatsapp.jpg"
       },
       {
         "category": "Full-Stack",
@@ -252,7 +252,7 @@
           "nginx",
           "telegram"
         ],
-        "image": "/assets/work/tma-en.JPG",
+        "image": "/assets/work/tma-en.jpg",
         "live": "https://t.me/teleclubclubbing_bot/Teleclub"
       },
       {
