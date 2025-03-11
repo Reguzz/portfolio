@@ -14,8 +14,8 @@ import {
 import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const info = [
   {
@@ -33,6 +33,7 @@ const info = [
 const Contact = () => {
   const { t, i18n } = useTranslation("global");
   const { lang } = useParams();
+  const [err, setErr] = useState({});
 
   useEffect(() => {
     document.title = t("Contact.title");
@@ -40,11 +41,43 @@ const Contact = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted");
     const info = t("Resume.info");
-    const email = info.filter((el) => el.title === "Email")[0].value;
+    const toEmail = info.filter((el) => el.title === "Email")[0].value;
+    const form = e.target.form;
+    const formData = new FormData(form);
+    const formValues = Object.fromEntries(formData.entries());
+    const { firstname, lastname, email, phone, service, message } = formValues;
 
-    window.open(`mailto:${email}?subject=subject&body=the ddewe`, "_blank");
+    let newErr = {};
+
+    if (!firstname || firstname.length < 1) {
+      newErr = { ...newErr, firstname: "required" };
+    }
+    if (!lastname || lastname.length < 1) {
+      newErr = { ...newErr, lastname: "required" };
+    }
+    if (!email || email.length < 1) {
+      newErr = { ...newErr, email: "required" };
+    }
+    if (!service || service.length < 1) {
+      newErr = { ...newErr, service: "required" };
+    }
+    console.log(err);
+
+    if (Object.keys(newErr).length > 0) {
+      setErr(newErr);
+      return;
+    }
+
+    const subject = `Richiesta informazioni`;
+    const body = encodeURI(
+      `Buongiorno Fabrizio,\nsono ${firstname} ${lastname} e ti scrivo per chiederti informazioni riguardo al servizio di ${service}.\n\n${message}\n\nPuoi contattarmi al seguente indirizzo email: ${email} ${
+        phone && "oppure al numero di telefono:" + phone
+      }`
+    );
+    window.open(`mailto:${toEmail}?subject=${subject}&body=${body}`, "_blank");
+    window.location.reload();
+    setErr({});
   };
 
   return (
@@ -57,7 +90,7 @@ const Contact = () => {
     >
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row gap-[30px]">
-          <div className="xl:h-[54%] order-2 xl:order-none">
+          <div className="xl:h-[54%] order-2 xl:order-none mb-10 xl:mb-0">
             <form
               action=""
               className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
@@ -67,23 +100,32 @@ const Contact = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input
                   type="firstname"
+                  name="firstname"
                   placeholder={`${t("Contact.form.firstname")}`}
+                  className={err.firstname && "border-red-500"}
                 />
                 <Input
                   type="lastname"
+                  name="lastname"
                   placeholder={`${t("Contact.form.lastname")}`}
+                  className={err.lastname && "border-red-500"}
                 />
                 <Input
                   type="email"
+                  name="email"
                   placeholder={`${t("Contact.form.email")}`}
+                  className={err.email && "border-red-500"}
                 />
                 <Input
                   type="phone"
+                  name="phone"
                   placeholder={`${t("Contact.form.phone")}`}
                 />
               </div>
-              <Select>
-                <SelectTrigger className="w-full">
+              <Select name="service">
+                <SelectTrigger
+                  className={`w-full ${err.service && "border-red-500"}`}
+                >
                   <SelectValue
                     placeholder={`${t("Contact.form.services.label")}`}
                   ></SelectValue>
@@ -112,9 +154,11 @@ const Contact = () => {
                 </SelectContent>
               </Select>
               <Textarea
+                name="message"
                 placeholder={`${t("Contact.form.message")}`}
                 className="h-[200px]"
               />
+
               <Button size="md" className="max-w-40" onClick={handleFormSubmit}>
                 {t("Contact.form.submit")}
               </Button>
@@ -124,7 +168,7 @@ const Contact = () => {
             <ul className="flex flex-col gap-10">
               {info.map((item, index) => (
                 <li key={index} className="flex gap-6 items-center">
-                  <div className="flex items-center justify-center w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] text-accent rounded-md">
+                  <div className="flex items-center justify-center w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] text-accent </li>rounded-md">
                     <div className="text-[28px]">{item.icon}</div>
                   </div>
                   <div className="flex-1">
@@ -135,7 +179,6 @@ const Contact = () => {
                       <a
                         className="text-xl"
                         href={`mailto:${item.description}`}
-                        // href={'mailto:email@gmail.com?subject=subject&body=the ddewe'}
                       >
                         {item.description}
                       </a>

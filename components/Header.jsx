@@ -9,7 +9,7 @@ const Header = () => {
   const locale = i18n.language;
   
   return (
-    <header className="py-8 xl:py-12 text-white">
+    <header className="py-8 xl:py-12 text-white h-35">
       <div className="container mx-auto flex justify-between items-center">
         {/* logo */}
         <Link to={`/${locale}`}>

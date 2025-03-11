@@ -7,7 +7,15 @@ import {
   Outlet,
   Navigate,
 } from "react-router-dom";
-import { Home, Cv, NotFound, Services, Resume, Work, Contact } from "./pages";
+import {
+  Home,
+  Cv,
+  NotFound,
+  Services,
+  Resume,
+  Work,
+  Contact,
+} from "./pages";
 import i18n from "i18next"; // make sure to import i18n
 import { useEffect } from "react";
 import { Header, StairTransition, PageTransition } from "../components";

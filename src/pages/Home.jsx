@@ -1,8 +1,16 @@
 import { useTranslation } from "react-i18next";
 import { CvButton, Photo, Social, Stats } from "../../components";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 const Home = () => {
-  const { t } = useTranslation("global");
+  const { t, i18n } = useTranslation("global");
+  const { lang } = useParams();
+
+  useEffect(() => {
+    document.title = t("HomePage.title");
+  }, [i18n.language, lang]);
+
   return (
     <>
       <section className="h-full">
