@@ -214,7 +214,7 @@
         "title": "Whatsapp Bot",
         "description": "Un bot WhatsApp che invia messaggi di promemoria con informazioni sull'orario e il luogo delle sessioni di allenamento o delle partite di una squadra. Uno strumento eccellente per tenere informati e organizzati i membri della squadra.",
         "stack": ["whatsapp", "js", "node"],
-        "image": "/assets/work/whatsapp.JPG"
+        "image": "/assets/work/whatsapp.jpg"
       },
       {
         "category": "Full-Stack",
@@ -251,7 +251,7 @@
           "nginx",
           "telegram"
         ],
-        "image": "/assets/work/tma-en.JPG",
+        "image": "/assets/work/tma-en.jpg",
         "live": "https://t.me/teleclubclubbing_bot/Teleclub"
       },
       {

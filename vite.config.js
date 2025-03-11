@@ -6,5 +6,5 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: "/portfolio/",
-  assetsInclude: ["**/*.JPG", "**/*.png"],
+  assetsInclude: ["**/*.jpg", "**/*.png"],
 });
