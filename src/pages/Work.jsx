@@ -9,8 +9,12 @@ import img0 from "../assets/work/whatsapp.jpg";
 import img1 from "../assets/work/mes.jpg";
 import img2 from "../assets/work/facial.png";
 import img3 from "../assets/work/tma-en.jpg";
-import img4 from "../assets/work/thumb1.png";
-const images = [img0, img1, img2, img3, img4];
+import img4 from "../assets/work/tma-it.jpg";
+import img5 from "../assets/work/portfolio-en.jpg";
+import img6 from "../assets/work/portfolio-it.jpg";
+
+const imagesIT = [img0, img1, img2, img4, img6];
+const imagesEN = [img0, img1, img2, img3, img5];
 
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 
@@ -25,6 +29,7 @@ import { WorkSliderBtns } from "../../components";
 const Work = () => {
   const [project, setProject] = useState();
   const [index, setIndex] = useState(0);
+  const [images, setImages] = useState(imagesEN);
 
   const { t, i18n } = useTranslation("global");
   const { lang } = useParams();
@@ -32,6 +37,8 @@ const Work = () => {
   useEffect(() => {
     document.title = t("Work.title");
     if (projects.length > 0) setProject(projects[0]);
+    if (lang === "it") setImages(imagesIT);
+    else setImages(imagesEN);
   }, [i18n.language, lang]);
 
   const projects = t("Work.projects");
