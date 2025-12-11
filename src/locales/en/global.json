@@ -69,9 +69,14 @@
       "description": "I have a background in IT and software development, with experience in both corporate and freelance environments. My expertise spans across various technologies and programming languages, allowing me to deliver comprehensive solutions tailored to specific business needs.",
       "items": [
         {
+          "company": "A-TEAM S.r.l",
+          "position": "ERP Consultant",
+          "period": "oct 2025 - Oggi"
+        },
+        {
           "company": "Gualini Lamiere International S.p.A.",
           "position": "IT Specialist",
-          "period": "2021 - Present"
+          "period": "2021 - sept 2025"
         },
         {
           "company": "Studio Montanelli",

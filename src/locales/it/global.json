@@ -68,9 +68,14 @@
       "description": "Ho esperienza nel settore IT e nello sviluppo software, sia in aziende che come freelance. Le mie competenze coprono diverse tecnologie e linguaggi di programmazione, e questo mi permette di creare soluzioni complete e adatte alle specifiche esigenze delle aziende.",
       "items": [
         {
+          "company": "A-TEAM S.r.l",
+          "position": "ERP Consultant",
+          "period": "ott 2025 - Oggi"
+        },
+        {
           "company": "Gualini Lamiere International S.p.A.",
           "position": "IT Specialist",
-          "period": "2021 - Oggi"
+          "period": "2021 - set 2025"
         },
         {
           "company": "Studio Montanelli",
